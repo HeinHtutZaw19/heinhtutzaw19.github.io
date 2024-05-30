@@ -31,6 +31,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	text-align: center;
 }
 
 ol, ul {
@@ -2633,9 +2634,10 @@ input, select, textarea {
 			}
 
 		.image.main {
-			display: block;
-			margin: 4rem 0;
-			width: 100%;
+			display: inline-block;
+			margin: 4rem auto;
+			width: 50%;
+			justify-content: center;
 		}
 
 			.image.main:first-child {
