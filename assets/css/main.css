@@ -443,6 +443,21 @@ input, select, textarea {
 		.row > .col-10 {
 			width: 83.33333%;
 		}
+		.row > .col-10 {
+			width: 83.33333%;
+		}
+
+		.tags {
+			display: inline-block;
+			padding: 0.5rem 1rem;
+			border-radius: 50px;
+			background-color: #eeeeee;
+			color: #212931;
+			font-size: 0.8rem;
+			font-weight: 600;
+			text-align: center;
+			margin: 0.5rem;
+		}
 
 		.row > .off-10 {
 			margin-left: 83.33333%;
