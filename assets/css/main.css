@@ -3208,6 +3208,9 @@ input, select, textarea {
 			.pagination .page, .pagination .extra {
 				display: none;
 			}
+			.posts{
+				display: flex;
+			}
 
 		}
 
