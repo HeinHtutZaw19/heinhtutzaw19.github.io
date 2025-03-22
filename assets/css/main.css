@@ -459,6 +459,12 @@ input, select, textarea {
 			margin: 0.5rem;
 		}
 
+		@media screen and (max-width: 480px) {
+			.tags {
+				font-size: 0.5rem;
+			}
+		}
+
 		.row > .off-10 {
 			margin-left: 83.33333%;
 		}
