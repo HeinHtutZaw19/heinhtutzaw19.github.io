@@ -3203,16 +3203,16 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 480px) {
-
-			.pagination .page, .pagination .extra {
-				display: none;
-			}
+		/* @media screen and (max-width: 480px) {
 			.posts{
 				display: flex;
 			}
+			.pagination .page, .pagination .extra {
+				display: none;
+			}
+			
 
-		}
+		} */
 
 	.pagination a, .pagination span {
 		border-color: #eeeeee;

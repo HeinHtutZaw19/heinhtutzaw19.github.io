@@ -239,34 +239,38 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 			<script>
-				function openTab(evt, sectionId) {
-					// Hide all sections
-					const sections = document.querySelectorAll('.posts');
-					sections.forEach(section => {
-						section.style.display = 'none';
-					});
-
-					// Remove active class from all page links
-					const tablinks = document.querySelectorAll('.page');
-					tablinks.forEach(tablink => {
-						tablink.classList.remove('active');
-					});
-
-					// Show the current section and add active class to the clicked tab
-					document.getElementById(sectionId).style.display = 'flex';
-					evt.currentTarget.classList.add('active');
-				}
-				document.addEventListener('DOMContentLoaded', () => {
-					const sections = document.querySelectorAll('.posts');
-					sections.forEach(section => {
-						section.style.display = 'none';
-					});
-					document.getElementById('section1').style.display = 'flex';
+			function openTab(evt, sectionId) {
+				// Hide all sections
+				const sections = document.querySelectorAll('.posts');
+				sections.forEach(section => {
+					section.style.display = 'none';
 				});
-				
+			
+				// Remove active class from all page links
+				const tablinks = document.querySelectorAll('.page');
+				tablinks.forEach(tablink => {
+					tablink.classList.remove('active');
+				});
+			
+				// Show the selected section and set display to flex
+				const selectedSection = document.getElementById(sectionId);
+				if (selectedSection) {
+					selectedSection.style.display = 'flex';
+				}
+			
+				// Add active class to the clicked tab
+				evt.currentTarget.classList.add('active');
+			}
+			
+			// Ensure only section1 is visible when the page loads
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelectorAll('.posts').forEach(section => {
+					section.style.display = 'none';
+				});
+				document.getElementById('section1').style.display = 'flex';
+			});
+			
 			</script>
-
 	</body>
 </html>
