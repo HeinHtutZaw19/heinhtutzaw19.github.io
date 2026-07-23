@@ -7,48 +7,19 @@
 <html>
 
 <head>
-	<title>Projects Page</title>
+	<title>Hein Htut Zaw</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
-	<style>
-		.filters {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 0.5rem;
-			margin-bottom: 2rem;
-		}
-
-		.filters .button {
-			cursor: pointer;
-			transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-		}
-
-		.filters .button.active {
-			background-color: #ffffff;
-			color: #1b1f22;
-			box-shadow: inset 0 0 0 2px #ffffff;
-		}
-
-		.posts article[hidden] {
-			display: none;
-		}
-
-		.tags {
-			cursor: default;
-		}
-	</style>
 </head>
 
 <body class="is-preload">
 
 	<!-- Wrapper -->
 	<div id="wrapper" class="fade-in">
-
 
 		<!-- Intro -->
 		<div id="intro">
@@ -60,17 +31,17 @@
 		</div>
 		<!-- Header -->
 		<header id="header">
-			<a href="about.html" class="logo">HEIN HTUT ZAW</a>
+			<a href="index.html" class="logo">Hein Htut Zaw</a>
 		</header>
 
 		<!-- Nav -->
 		<nav id="nav">
 			<ul class="links">
-				<li class="active"><a href="index.html">Projects</a></li>
-				<li><a href="about.html">About</a></li>
+				<li class="active"><a href="index.html">About</a></li>
+				<li><a href="projects.html">Projects</a></li>
 			</ul>
 			<ul class="icons alt">
-				<li><a href="https://linkedin.com/in/henryharu/" class="icon brands alt fa-linkedin"><span
+				<li><a href="https://linkedin.com/in/henryharu" class="icon brands alt fa-linkedin"><span
 							class="label">LinkedIn</span></a></li>
 				<li><a href="https://github.com/HeinHtutZaw19" class="icon brands alt fa-github"><span
 							class="label">GitHub</span></a></li>
@@ -81,197 +52,123 @@
 
 		<!-- Main -->
 		<div id="main">
-			<!-- Filters -->
-			<div class="filters">
-				<button class="button small active" data-filter="all">All</button>
-				<button class="button small" data-filter="data">Data</button>
-				<button class="button small" data-filter="software">Software Dev</button>
-				<button class="button small" data-filter="ai">AI / ML</button>
-				<button class="button small" data-filter="robotics">Robotics</button>
-			</div>
-			<!-- Posts -->
-			<section class="posts" id="projects">
-				<article data-category="ai">
+
+			<!-- Post -->
+			<section class="post">
+				<header class="major">
+					<h1> HEIN ZAW </br>(HENRY | 하루)</h1>
+				</header>
+				<div class="image main"><img src="images/pic01.jpeg" alt="henry" /></div>
+				<article class="profile">
 					<header>
-						<span class="date">June, 2026</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/book-recommender">Semantic book recommender
+						<h2>Education 🎓</h2>
+					</header>
+					<p> I started my academic journey in Mechatronics Engineering at <a href="https://ytuedu.org">Yangon
+							Technological University</a> and spent two exciting years there. But my passion for tech led
+						me
+						to transfer to <a href="https://www.sunykorea.ac.kr/en/">SUNY Korea</a>, where I dove into the
+						world
+						of Computer Science. I graduated the bachelors degree with <strong>Summa Cum Laude</strong>
+						(3.86/4.00) while
+						specializing in Data Science and
+						Artificial Intelligence, and did Accelerated Masters, balancing
+						both my undergrad and master's classes!</p>
+				</article>
+
+				<article class="profile">
+					<header>
+						<h2>Machine Learning Engineer @ SPOit 🧑‍💻</h2>
+					</header>
+
+					<p>
+						Since August 2025, I am working at
+						<a href="https://spoit.io" target="_blank" rel="noopener noreferrer">SPOit</a>
+						as a <strong>Software Engineer </strong>, responsible for the
+						<strong>KIX mobile camera app</strong>.
+						The app is available in
+						<a href="https://apps.apple.com/kr/app/kix/id6748595387?l=en-GB" target="_blank"
+							class="icon brands alt fa-apple" rel="noopener noreferrer"></a>
+						and
+						<a href="https://play.google.com/store/apps/details?id=io.spoit.SPOit" target="_blank"
+							class="icon brands alt fa-google" rel="noopener noreferrer"></a>.
+
+
+						I led the development of core machine learning systems for an AI-powered football highlight
+						generator, building end-to-end pipelines for multi-camera tracking and event detection.
+						Responsibilities included camera calibration, data processing and annotation workflows, model
+						training and evaluation, real-time event classification (goals, shots on target, shots off
+						target), tracking data fusion across multiple cameras, and deployment of production-grade
+						inference services.
+
+					</p>
+				</article>
+				<article class="profile">
+					<header>
+						<h2>
+							Me outside work 💬
 						</h2>
 					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">Gradio</span>
-						<span class="tags" style="background-color: #99ccff;">NLP</span>
-						<span class="tags" style="background-color: #99ccff;">LLM</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/book-recommender" class="image fit"><img
-							src="images/book-recommender.jpg" alt="" /></a>
-					<p>Developed an AI-powered semantic book recommendation system that delivers personalized book
-						suggestions from natural language queries. Built a retrieval pipeline using OpenAI embeddings
-						and ChromaDB to perform semantic search across 5,200+ titles. Applied Hugging Face Transformers
-						for zero-shot genre classification and emotion analysis, generating genre labels and seven
-						emotion scores per book. Processed and enriched a 6,800+ book dataset using Pandas, and deployed
-						an interactive Gradio web application with genre and emotion-based filtering. Built with Python,
-						PyTorch, LangChain, ChromaDB, Hugging Face, and OpenAI APIs.
+					<p>
+						When I’m not buried in code or algorithms, you’ll find me either on the football field ⚽, deep
+						in a chess game ♟️, or experimenting with new recipes in the kitchen 🍳. Food and strategy –
+						what a combo, right? 😋<br>
+						I adore both cats and dogs. I love teaching as well. Oh, and I’m proudly from Myanmar 🇲🇲!
 					</p>
-
 				</article>
-				<article data-category="software ai">
+				<article class="profile" aria-labelledby="resume-heading">
 					<header>
-						<span class="date">February, 2025</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/simplify">Simplify : AI-Powered Skincare Assistant
-						</h2>
+						<h2 id="resume-heading">Resume 📄</h2>
 					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">MERN</span>
-						<span class="tags" style="background-color: #99ccff;">Full Stack</span>
-						<span class="tags" style="background-color: #99ccff;">CI/CD</span>
+
+					<div class="pdf-wrapper">
+						<!-- Make sure this path is correct relative to index.html -->
+						<iframe id="iframe-resume" src="assets/docs/resume.pdf" title="Resume" frameborder="0"
+							loading="lazy" oncontextmenu="return false;">
+							Your browser does not support embedded PDFs. You can open the resume <a
+								href="assets/docs/resume.pdf" target="_blank" rel="noopener">in a new tab</a>.
+						</iframe>
 					</div>
-					<a href="https://github.com/HeinHtutZaw19/simplify" class="image fit"><img src="images/simplify.png"
-							alt="" /></a>
-					<p>Developed a responsive AI-driven self-care assistant that provides personalized skincare
-						recommendations, AI-powered skin analysis, and gamification features to enhance user engagement.
-						Integrated LangChain, Llama, and FaceApp API for chatbot assistance and skin diagnostics. Built
-						with the MERN stack (MongoDB, Express.js, React, Node.js) to implement leaderboards, AI Skin
-						Lab, chat functionality, product recommendations, and streak tracking. Ensured robust testing
-						with Vitest, CI/CD automation using GitHub Actions and GitHub Pages, and deployed on Render for
-						seamless hosting. Designed an intuitive UI for a smooth, fully responsive user experience.</p>
 
-				</article>
-				<article data-category="data">
+					<style>
+						/* Ensure hidden attr wins over theme */
+						[hidden] {
+							display: none !important;
+						}
 
-					<header>
-						<span class="date">July, 2024</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/Forage_Cognizant_AI">Cognizant AI Virtal Job
-								Simulation</a></h2>
-					</header>
-					<div style="display: flex; gap: 10px; justify-content: center;">
-						<span class="tags" style="background-color: #99ccff;">Python</span>
-						<span class="tags" style="background-color: #99ccff;">EDA</span>
-						<span class="tags" style="background-color: #99ccff;">Data Science</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/Forage_Cognizant_AI" class="image fit"><img
-							src="images/grocery.png" alt="Grocery Stock Predictive-Modeling" /></a>
-					<p>Conducted EDA and predictive-modeling of a 7-day sensor and sales dataset for Gala Groceries, and
-						extracted insights for efficient stocking and management of supermarket systems</p>
+						.pdf-wrapper {
+							height: 70vh;
+							min-height: 420px;
+							border: 1px solid #e5e7eb;
+							border-radius: 8px;
+							overflow: hidden;
+						}
 
-				</article>
-				<article data-category="data">
-					<header>
-						<span class="date">April, 2024</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/Data-Analysis">Statistical Data Analysis <br />
-								of NYC Taxi Trip Data</a></h2>
-						<div style="display: flex; gap: 10px; justify-content: center;">
-							<span class="tags" style="background-color: #99ccff;">Python</span>
-							<span class="tags" style="background-color: #99ccff;">EDA</span>
-							<span class="tags" style="background-color: #99ccff;">Data Science</span>
-						</div>
-					</header>
-					<a href="https://github.com/HeinHtutZaw19/Data-Analysis" class="image fit"><img
-							src="images/pic03.jpg" alt="Data-Analysis" /></a>
-					<p>Performed data cleaning, interpolation and statistic tests (Wald, T, Z, Bayesian, Chi-Square,
-						K-S, Permutation, Time Series Analysis) without using black box library codes and structured
-						multiple linear regression using normal equation.</p>
+						.pdf-wrapper iframe {
+							width: 100%;
+							height: 100%;
+							display: block;
+							border: 0;
+						}
 
+						@media (max-width: 640px) {
+							.pdf-wrapper {
+								height: 56vh;
+								min-height: 320px;
+							}
+						}
+					</style>
 				</article>
 
-				<article data-category="software">
-					<header>
-						<span class="date">February, 2024</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/fakeStackOverflow">Fake StackOverflow</h2>
-					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">MERN</span>
-						<span class="tags" style="background-color: #99ccff;">Full Stack</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/fakeStackOverflow" class="image fit"><img
-							src="images/answer_page.png" alt="" /></a>
-					<p>Developed a full-stack web application inspired by Stack Overflow, allowing users to ask
-						questions, provide answers, and engage in discussions. Implemented user authentication, question
-						upvoting/downvoting, and real-time updates using the MERN stack (MongoDB, Express.js, React,
-						Node.js). Designed an intuitive UI and optimized backend performance for seamless interaction.
-					</p>
-
-				</article>
-				<article data-category="ai">
-					<header>
-						<span class="date">November, 2023</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/Image-Stitching">Image Stitching<br />
-								Panorama</a></h2>
-					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">Python</span>
-						<span class="tags" style="background-color: #99ccff;">Computer Vision</span>
-						<span class="tags" style="background-color: #99ccff;">Artificial Intelligence</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/Image-Stitching" class="image fit"><img
-							src="images/pic04.jpg" alt="" /></a>
-					<p>Implemented Harris Corner Detection, two-directional feature matching with Normalized Cross
-						Correlation(NCC), Homography calculation, Backward bilinear image warping, and Random Sample
-						Consensus (RANSAC) to filter without black box libraries.</p>
-
-				</article>
-
-				<article data-category="robotics">
-					<header>
-						<span class="date">Jan 2021</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/simulation">Robotic Arm<br />
-								(ROS Based)</a></h2>
-					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">Python</span>
-						<span class="tags" style="background-color: #99ccff;">Cpp</span>
-						<span class="tags" style="background-color: #99ccff;">Robotics</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/simulation" class="image fit"><img src="images/pic06.jpg"
-							alt="" /></a>
-					<p>Designed and built a 6 Degrees Of Freedom (DOF) robotic arm with grabber arm mechanism
-						Implemented real-time simulation-based inverse kinematics with Robot Operating System (ROS) and
-						rviz2,
-						gazebo, moveIt package, and Arduino.
-						Enhanced precision using Proportional-Integrative-Derivative control (PID).</p>
-				</article>
-				<article data-category="robotics">
-					<header>
-						<span class="date">October, 2019</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/First-Global-Challenge-2019">First Global
-								Challenge<br />
-								Recycling Robot</a></h2>
-					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">Python</span>
-						<span class="tags" style="background-color: #99ccff;">Java</span>
-						<span class="tags" style="background-color: #99ccff;">Robotics</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/First-Global-Challenge-2019" class="image fit"><img
-							src="images/pic02.jpg" alt="First-Global-Challenge" /></a>
-					<p>Represented Myanmar. Implemented the integration of odometry kinematics, flywheel mechanism,
-						image processing, and sensor fusions. Attained <strong>Judges First Award</strong>, where the
-						criteria are the mechanical, computational, and implementation design.</p>
-
-				</article>
-
-				<article data-category="software">
-					<header>
-						<span class="date">December, 2018</span>
-						<h2><a href="https://github.com/HeinHtutZaw19/Sorting-Visualizer">Sorting Visualizer</a></h2>
-					</header>
-					<div style="text-align: center;">
-						<span class="tags" style="background-color: #99ccff;">Python</span>
-						<span class="tags" style="background-color: #99ccff;">Algorithm</span>
-						<span class="tags" style="background-color: #99ccff;">Visualization</span>
-					</div>
-					<a href="https://github.com/HeinHtutZaw19/Sorting-Visualizer" class="image fit"><img
-							src="images/pic05.jpg" alt="Sorting-Visualizer" /></a>
-					<p>Using Pygame Library, engineered visualizer to aid students to understand the Insertion Sort,
-						Selection Sort, Merge Sort and Bubble Sort by color coding each iteration without using the
-						sorting libraries</p>
-				</article>
 			</section>
+
+
 		</div>
+
 
 		<!-- Footer -->
 		<footer id="footer">
 			<section>
-				<form action="https://formspree.io/f/xovedlpn" method="POST">
+				<form action="https://formsubmit.co/heinzaw.official@gmail.com" method="POST" target="_blank">
 					<div class="fields">
 						<div class="field">
 							<label for="name">Name</label>
@@ -297,7 +194,7 @@
 				</section>
 				<section>
 					<h3>Phone</h3>
-					<p><a href="tel:+821058556697">(+82) 10-5855-6697</a></p>
+					<p><a href="tel:+821058556697"> (+82) 10-5855-6697</a></p>
 				</section>
 				<section>
 					<h3>Email</h3>
@@ -317,6 +214,7 @@
 			</section>
 		</footer>
 
+
 	</div>
 
 	<!-- Scripts -->
@@ -327,26 +225,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script>
-		// Filter projects by high-level category
-		const filterButtons = document.querySelectorAll('.filters .button');
-		const projects = document.querySelectorAll('#projects article');
 
-		filterButtons.forEach(button => {
-			button.addEventListener('click', () => {
-				const filter = button.dataset.filter;
-
-				filterButtons.forEach(b => b.classList.remove('active'));
-				button.classList.add('active');
-
-				projects.forEach(project => {
-					const categories = project.dataset.category.split(' ');
-					project.hidden = filter !== 'all' && !categories.includes(filter);
-				});
-			});
-		});
-
-	</script>
 </body>
 
 </html>

@@ -18,13 +18,13 @@ Built on the "Massively" HTML5 UP template. There is no build step, no framework
 
 ## Structure that isn't obvious from the file tree
 
-- **Two pages only:** `index.html` (projects) and `about.html`. Both share the same nav, header, and footer markup - a change to nav/footer must be duplicated across both files.
-- **Projects are hardcoded HTML**, not data-driven. Each project is an `<article>` inside the single `.posts` section (`#projects`) in `index.html`. Adding a project means copying an existing `<article>` block, dropping an image into `images/`, setting the tech-stack `<span class="tags">` chips, and adding a `data-category` attribute (see below).
-- **Category filtering.** A `.filters` bar above the projects holds buttons with `data-filter` values (`all`, `data`, `software`, `ai`, `robotics`). Each `<article>` carries a `data-category` attribute with one or more space-separated categories (e.g. `data-category="software ai"`). The inline `<script>` at the bottom of `index.html` toggles each article's `hidden` attribute on button click - plain vanilla JS, no jQuery. Adding a new category means adding a filter button and tagging the relevant articles; a project with no matching filter simply never shows under that button. There is no pagination or router - all projects live in one list.
+- **Two pages only:** `index.html` is the About/landing page (bio + the animated intro splash, the "Continue ↓" hero) and `projects.html` is the projects page. Both share the same nav, header, and footer markup - a change to nav/footer must be duplicated across both files. The nav lists About first (links to `index.html`), Projects second (links to `projects.html`).
+- **Projects are hardcoded HTML**, not data-driven. Each project is an `<article>` inside the single `.posts` section (`#projects`) in `projects.html`. Adding a project means copying an existing `<article>` block, dropping an image into `images/`, setting the tech-stack `<span class="tags">` chips, and adding a `data-category` attribute (see below).
+- **Category filtering.** A `.filters` bar above the projects holds buttons with `data-filter` values (`all`, `data`, `software`, `ai`, `robotics`). Each `<article>` carries a `data-category` attribute with one or more space-separated categories (e.g. `data-category="software ai"`). The inline `<script>` at the bottom of `projects.html` toggles each article's `hidden` attribute on button click - plain vanilla JS, no jQuery. Adding a new category means adding a filter button and tagging the relevant articles; a project with no matching filter simply never shows under that button. There is no pagination or router - all projects live in one list.
 - The template JS in `assets/js/` (jQuery + `main.js`, `util.js`, breakpoints, etc.) is vendored template code handling the intro animation, responsive nav, and scroll effects. Leave it alone unless changing template behavior.
 
 ## Conventions
 
 - Project tech-stack chips use inline `style="background-color: #99ccff;"` on `<span class="tags">`. Match that when adding tags. These are separate from `data-category` (the filter dimension).
-- The filter bar's styling lives in a scoped `<style>` block in `index.html`'s `<head>`, not in the Sass sources.
+- The filter bar's styling lives in a scoped `<style>` block in `projects.html`'s `<head>`, not in the Sass sources.
 - Resume lives at `assets/docs/resume.pdf`.
