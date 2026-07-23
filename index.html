@@ -129,6 +129,9 @@
 						</iframe>
 					</div>
 
+					<a class="button icon solid fa-download resume-download" href="assets/docs/resume.pdf"
+						download target="_blank" rel="noopener">Download Resume</a>
+
 					<style>
 						/* Ensure hidden attr wins over theme */
 						[hidden] {
@@ -150,10 +153,17 @@
 							border: 0;
 						}
 
+						.resume-download {
+							display: none;
+						}
+
 						@media (max-width: 640px) {
 							.pdf-wrapper {
-								height: 56vh;
-								min-height: 320px;
+								display: none;
+							}
+
+							.resume-download {
+								display: inline-flex;
 							}
 						}
 					</style>
