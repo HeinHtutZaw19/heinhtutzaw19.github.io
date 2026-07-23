@@ -14,6 +14,34 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		.filters {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0.5rem;
+			margin-bottom: 2rem;
+		}
+
+		.filters .button {
+			cursor: pointer;
+			transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+		}
+
+		.filters .button.active {
+			background-color: #ffffff;
+			color: #1b1f22;
+			box-shadow: inset 0 0 0 2px #ffffff;
+		}
+
+		.posts article[hidden] {
+			display: none;
+		}
+
+		.tags {
+			cursor: default;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -53,9 +81,17 @@
 
 		<!-- Main -->
 		<div id="main">
+			<!-- Filters -->
+			<div class="filters">
+				<button class="button small active" data-filter="all">All</button>
+				<button class="button small" data-filter="data">Data</button>
+				<button class="button small" data-filter="software">Software Dev</button>
+				<button class="button small" data-filter="ai">AI / ML</button>
+				<button class="button small" data-filter="robotics">Robotics</button>
+			</div>
 			<!-- Posts -->
-			<section class="posts" id="section1" style="display: none">
-				<article>
+			<section class="posts" id="projects">
+				<article data-category="ai">
 					<header>
 						<span class="date">June, 2026</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/book-recommender">Semantic book recommender
@@ -78,7 +114,7 @@
 					</p>
 
 				</article>
-				<article>
+				<article data-category="software ai">
 					<header>
 						<span class="date">February, 2025</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/simplify">Simplify : AI-Powered Skincare Assistant
@@ -100,7 +136,7 @@
 						seamless hosting. Designed an intuitive UI for a smooth, fully responsive user experience.</p>
 
 				</article>
-				<article>
+				<article data-category="data">
 
 					<header>
 						<span class="date">July, 2024</span>
@@ -118,7 +154,7 @@
 						extracted insights for efficient stocking and management of supermarket systems</p>
 
 				</article>
-				<article>
+				<article data-category="data">
 					<header>
 						<span class="date">April, 2024</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/Data-Analysis">Statistical Data Analysis <br />
@@ -137,7 +173,7 @@
 
 				</article>
 
-				<article>
+				<article data-category="software">
 					<header>
 						<span class="date">February, 2024</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/fakeStackOverflow">Fake StackOverflow</h2>
@@ -155,7 +191,7 @@
 					</p>
 
 				</article>
-				<article>
+				<article data-category="ai">
 					<header>
 						<span class="date">November, 2023</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/Image-Stitching">Image Stitching<br />
@@ -174,9 +210,7 @@
 
 				</article>
 
-			</section>
-			<section class="posts" id="section2">
-				<article>
+				<article data-category="robotics">
 					<header>
 						<span class="date">Jan 2021</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/simulation">Robotic Arm<br />
@@ -195,7 +229,7 @@
 						gazebo, moveIt package, and Arduino.
 						Enhanced precision using Proportional-Integrative-Derivative control (PID).</p>
 				</article>
-				<article>
+				<article data-category="robotics">
 					<header>
 						<span class="date">October, 2019</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/First-Global-Challenge-2019">First Global
@@ -215,7 +249,7 @@
 
 				</article>
 
-				<article>
+				<article data-category="software">
 					<header>
 						<span class="date">December, 2018</span>
 						<h2><a href="https://github.com/HeinHtutZaw19/Sorting-Visualizer">Sorting Visualizer</a></h2>
@@ -232,16 +266,6 @@
 						sorting libraries</p>
 				</article>
 			</section>
-			<!-- Footer -->
-			<footer>
-				<div class="pagination">
-					<!--<a href="#" class="previous">Prev</a>-->
-					<a href="#section1" class="page active" onclick="openTab(event, 'section1')">1</a>
-					<a href="#section2" class="page" onclick="openTab(event, 'section2')">2</a>
-					<!-- <span class="extra">&hellip;</span> -->
-					<!-- <a href="#" class="next">Next</a> -->
-				</div>
-			</footer>
 		</div>
 
 		<!-- Footer -->
@@ -269,8 +293,7 @@
 			<section class="split contact">
 				<section class="alt">
 					<h3>Address</h3>
-					<p>SUNY Korea, Songdo, Moonhwa-ro<br />
-						Incheon, South Korea</p>
+					<p>Guro Digital Complex, South Korea</p>
 				</section>
 				<section>
 					<h3>Phone</h3>
@@ -305,35 +328,22 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>
-		function openTab(evt, sectionId) {
-			// Hide all sections
-			const sections = document.querySelectorAll('.posts');
-			sections.forEach(section => {
-				section.style.display = 'none';
+		// Filter projects by high-level category
+		const filterButtons = document.querySelectorAll('.filters .button');
+		const projects = document.querySelectorAll('#projects article');
+
+		filterButtons.forEach(button => {
+			button.addEventListener('click', () => {
+				const filter = button.dataset.filter;
+
+				filterButtons.forEach(b => b.classList.remove('active'));
+				button.classList.add('active');
+
+				projects.forEach(project => {
+					const categories = project.dataset.category.split(' ');
+					project.hidden = filter !== 'all' && !categories.includes(filter);
+				});
 			});
-
-			// Remove active class from all page links
-			const tablinks = document.querySelectorAll('.page');
-			tablinks.forEach(tablink => {
-				tablink.classList.remove('active');
-			});
-
-			// Show the selected section and set display to flex
-			const selectedSection = document.getElementById(sectionId);
-			if (selectedSection) {
-				selectedSection.style.display = 'flex';
-			}
-
-			// Add active class to the clicked tab
-			evt.currentTarget.classList.add('active');
-		}
-
-		// Ensure only section1 is visible when the page loads
-		document.addEventListener('DOMContentLoaded', () => {
-			document.querySelectorAll('.posts').forEach(section => {
-				section.style.display = 'none';
-			});
-			document.getElementById('section1').style.display = 'flex';
 		});
 
 	</script>
